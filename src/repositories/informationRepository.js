@@ -9,7 +9,7 @@ const getInformation = async () => {
 const updateInformation = async (data) => {
   const result = await pool.query(`
     UPDATE information
-    SET name = $1,  profilePic = $2, office = $3, resume = $4
+    SET name = $1,  "profilePic" = $2, office = $3, resume = $4
     WHERE id = 1
     RETURNING *
   `, [data.name, data.profilePic, data.office, data.resume])

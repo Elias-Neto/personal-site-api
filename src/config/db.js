@@ -36,12 +36,12 @@ const initDatabase = async () => {
     CREATE TABLE IF NOT EXISTS information (
       id SERIAL PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
-      profilePic VARCHAR(255) NOT NULL,
+      "profilePic" VARCHAR(255) NOT NULL,
       office VARCHAR(255) NOT NULL,
       resume VARCHAR NOT NULL  
     );
 
-    INSERT INTO information (name, profilePic, office, resume) 
+    INSERT INTO information (name, "profilePic", office, resume) 
     SELECT '', '', '', ''
     WHERE NOT EXISTS (
       SELECT 1 FROM information

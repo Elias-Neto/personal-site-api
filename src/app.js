@@ -1,4 +1,5 @@
 require("./config/dotenv")
+require("express-async-errors")
 
 const cors = require("cors")
 const express = require("express")
@@ -27,11 +28,13 @@ app.use("/api/informacoes", informationRouter)
 
 initDatabase()
 
-// Limpar cache dos módulos
-Object.keys(require.cache).forEach(function (key) {
-  delete require.cache[key];
-});
-
+app.use((err, req, res, next) => {
+  console.log(err)
+  res.status(500).json({
+    status: "error",
+    message: err.message
+  })
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)

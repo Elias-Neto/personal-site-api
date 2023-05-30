@@ -17,7 +17,7 @@ const informationRouter = require("./routes/information.routes")
 const port = process.env.APP_PORT || 5000
 
 app.get("/", (req, res) => {
-  res.send("Hello World")
+  res.send("Welcome to my Personal Site API :)")
 })
 
 app.use("/api/auth", authRouter)

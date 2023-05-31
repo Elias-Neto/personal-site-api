@@ -16,8 +16,8 @@ const initDatabase = async () => {
       title VARCHAR(255) NOT NULL, 
       type VARCHAR(255) NOT NULL, 
       description VARCHAR(255), 
-      "startYear" INTEGER,
-      "endYear" INTEGER
+      "startYear" VARCHAR(255),
+      "endYear" VARCHAR(255) 
     )
   `)
 
